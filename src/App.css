@@ -50,6 +50,9 @@ html {
   margin-left: auto;
   margin-right: 0.5rem;
   cursor: pointer;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
 }
 .title-bar .fa-arrows-alt:hover {
   color: #dfdddd;
@@ -68,8 +71,8 @@ html {
 .editor-section.windowMaximise_true {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100vw;
+  left: 2.5vw;
+  width: 95vw;
   height: 100vh;
 }
 .editor-section.windowMaximise_true textarea {
@@ -97,9 +100,10 @@ html {
 .preview-section.windowMaximise_true {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100vw;
+  left: 2.5vw;
+  width: 95vw;
   height: 100vh;
+  overflow-x: scroll;
 }
 .preview-section.windowMaximise_true #preview {
   min-height: 100%;
@@ -118,4 +122,18 @@ html {
   color: #0de80d;
   padding: 1rem;
   font-size: 1.4rem;
+}
+.preview-section code {
+  font-family: "Inconsolata", monospace;
+  background: #222222;
+  padding: 0 0.5rem 0 0.5rem;
+  color: #0de80d;
+  font-size: 1.4rem;
+}
+.preview-section table,
+.preview-section th,
+.preview-section td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 1rem;
 }

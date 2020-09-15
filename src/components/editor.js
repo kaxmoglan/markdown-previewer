@@ -17,7 +17,12 @@ const Editor = (props) => {
         <p>Editor</p>
         <i className="fas fa-arrows-alt" onClick={handleMax}></i>
       </div>
-      <textarea onChange={handleInput} name="editor" id="editor"></textarea>
+      <textarea
+        onChange={handleInput}
+        name="editor"
+        id="editor"
+        value={props.inputText}
+      ></textarea>
     </div>
   );
 };

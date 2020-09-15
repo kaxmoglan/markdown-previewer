@@ -52,6 +52,7 @@ html {
     margin-left: auto;
     margin-right: 0.5rem;
     cursor: pointer;
+    transition: all 200ms ease;
 
     &:hover {
       color: rgb(223, 221, 221);
@@ -69,8 +70,8 @@ html {
   &.windowMaximise_true {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
+    left: 2.5vw;
+    width: 95vw;
     height: 100vh;
 
     textarea {
@@ -98,9 +99,10 @@ html {
   &.windowMaximise_true {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
+    left: 2.5vw;
+    width: 95vw;
     height: 100vh;
+    overflow-x: scroll;
 
     #preview {
       min-height: 100%;
@@ -122,5 +124,21 @@ html {
     color: rgb(13, 232, 13);
     padding: 1rem;
     font-size: 1.4rem;
+  }
+
+  code {
+    font-family: $codeFont;
+    background: rgb(34, 34, 34);
+    padding: 0 0.5rem 0 0.5rem;
+    color: rgb(13, 232, 13);
+    font-size: 1.4rem;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 1rem;
   }
 }
