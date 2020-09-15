@@ -6,12 +6,16 @@ const Editor = (props) => {
     props.setInputText(e.target.value);
   };
 
+  const handleMax = () => {
+    props.setEditMaximise(!props.editMaximise);
+  };
+
   return (
-    <div className="editor-section">
+    <div className={`editor-section windowMaximise_${props.editMaximise}`}>
       <div className="title-bar">
         <i className="fas fa-code"></i>
         <p>Editor</p>
-        <i className="fas fa-arrows-alt"></i>
+        <i className="fas fa-arrows-alt" onClick={handleMax}></i>
       </div>
       <textarea onChange={handleInput} name="editor" id="editor"></textarea>
     </div>

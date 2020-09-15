@@ -14,12 +14,16 @@ const Preview = (props) => {
 
   const markdown = marked(props.inputText);
 
+  const handleMax = () => {
+    props.setPreviewMaximise(!props.previewMaximise);
+  };
+
   return (
-    <div className="preview-section">
+    <div className={`preview-section windowMaximise_${props.previewMaximise}`}>
       <div className="title-bar">
         <i className="fas fa-code"></i>
         <p>Preview</p>
-        <i className="fas fa-arrows-alt"></i>
+        <i onClick={handleMax} className="fas fa-arrows-alt"></i>
       </div>
       <div id="preview" dangerouslySetInnerHTML={{ __html: markdown }} />
     </div>
