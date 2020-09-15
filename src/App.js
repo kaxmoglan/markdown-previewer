@@ -1,37 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
-function App() {
-  const Editor = () => {
-    return (
-      <div className="editor-section">
-        <div className="title-bar">
-          <i className="fas fa-code"></i>
-          <p>Editor</p>
-          <i className="fas fa-arrows-alt"></i>
-        </div>
-        <textarea name="editor" id="editor" cols="30" rows="10"></textarea>
-      </div>
-    );
-  };
+// Components
+import Editor from "./components/editor";
+import Preview from "./components/preview";
 
-  const Preview = () => {
-    return (
-      <div className="preview-section">
-        <div className="title-bar">
-          <i className="fas fa-code"></i>
-          <p>Preview</p>
-          <i className="fas fa-arrows-alt"></i>
-        </div>
-        <div id="preview"></div>
-      </div>
-    );
-  };
+function App() {
+  // STATES
+  const [inputText, setInputText] = useState("");
 
   return (
     <>
-      <Editor />
-      <Preview />
+      <h1 id="title">
+        <i className="fas fa-code"></i> Markdown Previewer
+      </h1>
+      <Editor setInputText={setInputText} />
+      <Preview inputText={inputText} />
     </>
   );
 }
