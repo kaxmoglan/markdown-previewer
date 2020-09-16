@@ -10,6 +10,14 @@ function App() {
   const [inputText, setInputText] = useState(placeholder);
   const [editMaximise, setEditMaximise] = useState(false);
   const [previewMaximise, setPreviewMaximise] = useState(false);
+  const [splitView, setSplitView] = useState(false);
+
+  // HANDLE SPLIT VIEW
+  const handleSplitView = () => {
+    setEditMaximise(false);
+    setPreviewMaximise(false);
+    setSplitView(!splitView);
+  };
 
   return (
     <>
@@ -21,11 +29,17 @@ function App() {
         setInputText={setInputText}
         editMaximise={editMaximise}
         setEditMaximise={setEditMaximise}
+        splitView={splitView}
+        setSplitView={setSplitView}
+        handleSplitView={handleSplitView}
       />
       <Preview
         inputText={inputText}
         previewMaximise={previewMaximise}
         setPreviewMaximise={setPreviewMaximise}
+        splitView={splitView}
+        setSplitView={setSplitView}
+        handleSplitView={handleSplitView}
       />
     </>
   );

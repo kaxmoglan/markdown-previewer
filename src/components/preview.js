@@ -16,14 +16,20 @@ const Preview = (props) => {
 
   const handleMax = () => {
     props.setPreviewMaximise(!props.previewMaximise);
+    props.setSplitView(false);
   };
 
   return (
-    <div className={`preview-section windowMaximise_${props.previewMaximise}`}>
+    <div
+      className={`preview-section windowMaximise_${props.previewMaximise} splitview_${props.splitView}`}
+    >
       <div className="title-bar">
         <i className="fas fa-code"></i>
         <p>Preview</p>
-        <i onClick={handleMax} className="fas fa-arrows-alt"></i>
+        <div className="buttons">
+          <i onClick={props.handleSplitView} className="fas fa-columns"></i>
+          <i onClick={handleMax} className="fas fa-arrows-alt"></i>
+        </div>
       </div>
       <div id="preview" dangerouslySetInnerHTML={{ __html: markdown }} />
     </div>

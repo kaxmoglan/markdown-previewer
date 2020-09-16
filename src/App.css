@@ -46,15 +46,18 @@ html {
 .title-bar p {
   margin-left: 1rem;
 }
-.title-bar .fa-arrows-alt {
+.title-bar .buttons {
   margin-left: auto;
   margin-right: 0.5rem;
+}
+.title-bar .buttons i {
   cursor: pointer;
   -webkit-transition: all 200ms ease;
   -o-transition: all 200ms ease;
   transition: all 200ms ease;
+  margin: 0.5rem;
 }
-.title-bar .fa-arrows-alt:hover {
+.title-bar .buttons i:hover {
   color: #dfdddd;
 }
 
@@ -77,6 +80,20 @@ html {
 }
 .editor-section.windowMaximise_true textarea {
   min-height: 100%;
+}
+.editor-section.splitview_true {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  min-height: 100vh;
+}
+.editor-section.splitview_true textarea {
+  resize: vertical;
+  min-height: 75vh;
 }
 .editor-section textarea {
   width: 100%;
@@ -107,6 +124,16 @@ html {
 }
 .preview-section.windowMaximise_true #preview {
   min-height: 100%;
+}
+.preview-section.splitview_true {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  min-height: 100vh;
 }
 .preview-section #preview {
   width: 100%;

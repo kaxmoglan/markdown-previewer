@@ -8,14 +8,20 @@ const Editor = (props) => {
 
   const handleMax = () => {
     props.setEditMaximise(!props.editMaximise);
+    props.setSplitView(false);
   };
 
   return (
-    <div className={`editor-section windowMaximise_${props.editMaximise}`}>
+    <div
+      className={`editor-section windowMaximise_${props.editMaximise} splitview_${props.splitView}`}
+    >
       <div className="title-bar">
         <i className="fas fa-code"></i>
         <p>Editor</p>
-        <i className="fas fa-arrows-alt" onClick={handleMax}></i>
+        <div className="buttons">
+          <i className="fas fa-columns" onClick={props.handleSplitView}></i>
+          <i className="fas fa-arrows-alt" onClick={handleMax}></i>
+        </div>
       </div>
       <textarea
         onChange={handleInput}

@@ -3,8 +3,6 @@ $mainFont: "Montserrat", sans-serif;
 
 * {
   box-sizing: border-box;
-  // margin: 0;
-  // padding: 0;
 }
 
 html {
@@ -48,14 +46,18 @@ html {
     margin-left: 1rem;
   }
 
-  .fa-arrows-alt {
+  .buttons {
     margin-left: auto;
     margin-right: 0.5rem;
-    cursor: pointer;
-    transition: all 200ms ease;
 
-    &:hover {
-      color: rgb(223, 221, 221);
+    i {
+      cursor: pointer;
+      transition: all 200ms ease;
+      margin: 0.5rem;
+
+      &:hover {
+        color: rgb(223, 221, 221);
+      }
     }
   }
 }
@@ -76,6 +78,21 @@ html {
 
     textarea {
       min-height: 100%;
+    }
+  }
+
+  &.splitview_true {
+    box-shadow: none;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    min-height: 100vh;
+
+    textarea {
+      resize: vertical;
+      min-height: 75vh;
     }
   }
 
@@ -107,6 +124,15 @@ html {
     #preview {
       min-height: 100%;
     }
+  }
+  &.splitview_true {
+    box-shadow: none;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    min-height: 100vh;
   }
 
   #preview {
